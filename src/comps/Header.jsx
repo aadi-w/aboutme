@@ -3,7 +3,6 @@ import sign from '../assets/sign.png'
 import { Link } from "react-router-dom";
 import github from '../assets/social/github.png'
 import leetcode from '../assets/social/leetcode.png'
-// import linkedin from '../assets/social/linkedin.png'
 
 function Header() {
     return (
@@ -14,7 +13,7 @@ function Header() {
                 </Link>
             </div>
             <div className="external">
-                <a href="https://github.com/aditya-a-wadikar"><img src={github}/></a>
+                <a href="https://github.com/aadi-w/"><img src={github}/></a>
                 <a href="https://leetcode.com/u/aditya-a-wadikar/"><img src={leetcode}/></a>
             </div>
         </header>
