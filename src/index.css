@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: black;
+  word-spacing: 2;
+  letter-spacing: 3;
+  line-height: 1.5;
+  background-image: url("./assets/bg.jpg");
+}
+
+/* highlights */
+mark{
+  background-color: rgb(255, 255, 214);
+  padding: 0 4px;
+  font-weight: 400;
+}
+
+.nav-main-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+/* Tooltip styles */
+.tooltipitem {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipitem[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 10%;
+  left: 200%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0.9;
+  transition: opacity 0s;
+}
+
+.tooltipitem[title]:hover {
+  position: relative;
+}
+
+/* Header */
+header {
+  width: 100vw;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+header .logo {
+  padding: 30px 0 0 0;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+header .logo img {
+  width: 70%;
+  object-fit: contain;
+  filter: invert(1);
+  animation: thundering 1s infinite;
+  transition: ease-in-out 0.2s;
+}
+
+header .logo img:hover {
+  animation: none;
+  filter: invert(1);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+@keyframes thundering {
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0.5;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.5;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+header .external{
+  padding: 5px 10px 0 8px;
+}
+
+header .external a{
+  margin: 0 6px;
+}
+
+header .external a:hover{
+  filter: invert(0.4);
+}
+
+header .external a img{
+  width: 25px;
+  height: 25px;
+}
+
+
+/* Nav */
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 20px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+nav .tooltipitem {
+  width: 50px;
+  padding: 6px 5px;
+}
+
+nav .tooltipitem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: ease-in 0.2s;
+  filter: invert(0);
+}
+
+nav .tooltipitem img:hover {
+  filter: invert(0.3);
+  transition: ease-in-out 0.2s;
+}
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Not Found */
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.notfound img {
+  object-fit: contain;
+  width: 50%;
+}
+
+/* Home */
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .mess-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .mess-text .text {
+  margin: 5px 0;
+}
+
+.home .mess-text .span {
+  font-size: 1.3rem;
+}
+
+.home .intro {
+  background: rgb(43, 43, 43);
+  color: beige;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.home .intro:hover {
+  background: dimgray;
+}
+
+.home .myimg-wrapper {
+  width: 40%;
+}
+
+.home .myimg-wrapper img,
+.home .myimg-wrapper .myself {
+  z-index: 5;
+  width: 100%;
+}
+
+.home .myimg-wrapper #myself {
+  max-width: 300px;
+  margin-left: 100px;
+}
+
+.home .show {
+  transition: 0.2s ease-in-out;
+  animation-name: fade-in;
+  animation-duration: 0.4s;
+  display: block;
+}
+
+.home .hide {
+  transition: 0.2s ease-in-out;
+  animation-name: fade-out;
+  animation-duration: 0.4s;
+  display: none;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+/* Profile */
+.profile {
+  padding: 1rem 2rem;
+}
+
+.profile .bio, .profile .techwrapper, .profile .hobbiewrapper {
+  margin: 40px 0;
+}
+
+.profile .headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+.bio p {
+  color: rgb(66, 59, 50);
+  text-align: justify;
+  margin: 10px 0;
+}
+
+.techwrapper span, .hobbiewrapper span{
+  display: block;
+  text-align: center;
+  color: dimgray;
+  font-size: 0.7rem;
+  margin-bottom: 5px;
+}
+
+.tech, .hobbies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech .img-wrapper, .hobbies .img-wrapper {
+  width: 60px;
+  margin: 0 10px;
+}
+
+.tech .img-wrapper img, .hobbies .img-wrapper img {
+  width: 100%;
+  object-fit: contain;
+}
